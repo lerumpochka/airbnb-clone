@@ -58,7 +58,7 @@ Once you are done ask a teacher to review it together.
 
 Create the Trello board with the user stories, the tasks and the roles of the team.
 
-You can start by using this [template](https://trello.com/b/5kjBfYGZ)
+Our Trello Board: https://trello.com/b/y5n3prNR/team-product-sprint
 
 Once you are done ask a teacher to review it together.
 
