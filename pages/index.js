@@ -17,31 +17,18 @@ export default function Home(props) {
           <Link href="/flats/23">/flats/23</Link>
           <br />
           <br />
-          <span>Location page of Flat: </span>
-          <Link href="/flats/location/flatId">/flats/location/flatId</Link>
         </Wrap>
         <Wrap>
           <h1>Seller</h1>
           <span>create a flat &#40;form&#41;: </span>
-          <Link href="/flats/create">/flats/create</Link>
+          <Link href="/flats/new">/flats/create</Link>
           <br />
-          <span>Post a flat&#40;post method&#41;: </span>
-          <Link href="/api/flats/post">/api/flats/post</Link>
-          <br />
+
           <br />
           <span>Edit a flat&#40;form&#41;: </span>
-          <Link href="/flats/modify/12">/flats/modify/12</Link>
+          <Link href="/flats/23/edit">/flats/23/edit</Link>
           <br />
-          <span>Edit a flat&#40;put method&#41;: </span>
-          <Link href="/api/flats/modify">/api/flats/modify</Link>
-          <br />
-          <br />
-          <span>Delete a flat: </span>
-          <Link href="/flats/delete/99">/flats/delete/99</Link>
-          <br />
-          <span>Delete a flat&#40;delete method&#41;: </span>
-          <Link href="/api/flats/delete/99">/api/flats/delete/99</Link>
-          <br />
+
           <br />
           <span>All the seller flats: </span>
           <Link href="/profile/flats/owner">/profile/flats/owner</Link>

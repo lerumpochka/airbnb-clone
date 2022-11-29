@@ -2,15 +2,15 @@ import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function Flat() {
+function FlatDetails() {
   const router = useRouter();
-  const flatId = router.query.flatId;
+  const id = router.query.id;
   return (
     <div style={{ textAlign: "center" }}>
-      <h1 style={{ fontSize: "50px", textAlign: "center" }}>Flat {flatId} Details</h1>
+      <h1 style={{ fontSize: "50px", textAlign: "center" }}>Flat {id} Details</h1>
       <Link href="/">Back to Home page</Link>
     </div>
   );
 }
 
-export default Flat;
+export default FlatDetails;
