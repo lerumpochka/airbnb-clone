@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Flat.belongsToMany(models.User, {through: models.Booking})
     }
   }
   Flat.init({

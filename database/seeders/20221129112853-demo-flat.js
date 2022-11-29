@@ -3,7 +3,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) { 
      
-      await queryInterface.bulkInsert('Flat', [{
+      await queryInterface.bulkInsert('Flats', [{
         
           type: "monolocale",
           location: 'Roma',
