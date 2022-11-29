@@ -9,9 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Name: {
-        type: Sequelize.STRING
-      },
+  
       type: {
         type: Sequelize.STRING
       },
@@ -21,11 +19,11 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      imgScrr: {
+      imgScr: {
         type: Sequelize.STRING
       },
       UserId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -41,3 +39,10 @@ module.exports = {
     await queryInterface.dropTable('Flats');
   }
 };
+
+
+
+
+
+
+

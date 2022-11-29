@@ -10,16 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       UserId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       FlatId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
-      sratDate: {
-        type: Sequelize.STRING
+      startDate: {
+        type: Sequelize.DATE
       },
       endDate: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -35,3 +35,10 @@ module.exports = {
     await queryInterface.dropTable('Bookings');
   }
 };
+
+
+
+
+
+
+

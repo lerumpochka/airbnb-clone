@@ -14,15 +14,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Flat.init({
-    Name: DataTypes.STRING,
+   
     type: DataTypes.STRING,
     location: DataTypes.STRING,
     description: DataTypes.TEXT,
-    imgScrr: DataTypes.STRING,
-    UserId: DataTypes.STRING
+    imgScr: DataTypes.STRING,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Flat',
   });
   return Flat;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
