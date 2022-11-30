@@ -14,6 +14,11 @@ const flatsController = {
     const flats = await db.Flat.findAll({where: {UserId: id}})
     return JSON.parse(JSON.stringify(flats))
   },
+   //findOne gave a strange error,I've created this method untill we fix
+   book: async (id) => {
+    const flat =await db.Flat.findByPk(id)
+    return JSON.parse(JSON.stringify(flat))
+  }
 }
 
 export default flatsController;
