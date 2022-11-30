@@ -1,18 +1,19 @@
 import db from "../database/index.js"
 
 const flatsController = {
- find: async (id) => {
-   const flat =await db.Flat.findOne(id)
-   return JSON.parse(JSON.stringify(flat))
- },
- findAll: async () => {
-   const flats = await db.Flat.findAll()
-   return JSON.parse(JSON.stringify(flats))
- },
- //create: async (data) => {
-   //const user = await db.User.create(data)
-   //return JSON.parse(JSON.stringify(user))
- //}
+  find: async (id) => {
+    const flat =await db.Flat.findOne(id)
+    return JSON.parse(JSON.stringify(flat))
+  },
+  findAll: async () => {
+    const flats = await db.Flat.findAll()
+    return JSON.parse(JSON.stringify(flats))
+  },
+  //to see all owned flats for curtain user (owner) in profile
+  all: async (id) => {
+    const flats = await db.Flat.findAll({where: {UserId: id}})
+    return JSON.parse(JSON.stringify(flats))
+  },
 }
 
 export default flatsController;
