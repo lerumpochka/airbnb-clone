@@ -7,15 +7,14 @@ const authOptions = {
    CredentialsProvider({
      name: "Credentials",
      credentials: {
-       username: { label: "Usr", type: "text", placeholder: ".." },
-       password: { label: "Password", type: "password" }
+       username: { label: "User", type: "text", placeholder: ".." },
+       email: { label: "email", type: "email" }
      },
      async authorize(credentials, req) {
        const user = await db.User.create({
          name: credentials.username,
-         email: credentials.password
+         email: credentials.email
        })
-       console.log('fda', user)
        if (user) {
          // Any object returned will be saved in `user` property
          console.log('user in auth ', user)

@@ -1,11 +1,13 @@
 import { getSession } from "next-auth/react";
+import Map from "../components/map"
 
 export default function Home(props) {
   return (
     <div>
       <h1>Home page</h1>
+      <Map />
     </div>
-  );
+
 }
 
 
