@@ -19,7 +19,7 @@ const initFlat = (sequelize, DataTypes) => {
     type: DataTypes.STRING,
     location: DataTypes.STRING,
     description: DataTypes.TEXT,
-    imgScr: DataTypes.STRING,
+    imgSrc: DataTypes.STRING,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
