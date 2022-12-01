@@ -20,11 +20,13 @@ export default  function ImageUpload(props) {
 
     // send img as a post to cldnr
     //wait for response
-    const responseCloudinary = await fetch('https://api.cloudinary.com/v1_1/dzvox0kev/image/upload',{
+    const responseCloudinary = await fetch('https://api.cloudinary.com/v1_1/dh1ux6y9c/image/upload',{
       method: "POST",
       body: imageFormData
     })
+    
     const responseCloudinaryData = await responseCloudinary.json()
+    console.log(responseCloudinaryData); //when we change img log an obj with "link" in secure_url key
     //get url from response
     const imageUrl = responseCloudinaryData.secure_url
 
@@ -40,7 +42,7 @@ export default  function ImageUpload(props) {
       <div >
         <label htmlFor="image">Upload an Image</label>
         <input type="file" accept=".jpg, .png, .jpeg" name="image" id="image" onChange={handleChange} />
-        <input hidden={true} name="imgSrc" id="imgSrc" defaultValue={url} />
+        <input hidden={true} name="imgScr" id="imgScr" defaultValue={url} />
       </div>
     </>
   )

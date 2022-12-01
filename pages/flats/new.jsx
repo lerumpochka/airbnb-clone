@@ -21,7 +21,7 @@ function CreateFlat(props) {
           <input type="text" id="description" name="description" /><br />
           <label htmlFor="location">the adress:</label><br />
           <input type="text" id="location" name="location" /><br /><br />
-          {/* <ImageUpload ></ImageUpload> */}
+          <ImageUpload ></ImageUpload>
           <input type="submit" value="Submit" />
         </form>
       </div>
