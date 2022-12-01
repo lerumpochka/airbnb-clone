@@ -18,6 +18,10 @@ const flatsController = {
    book: async (id) => {
     const flat =await db.Flat.findByPk(id)
     return JSON.parse(JSON.stringify(flat))
+  },
+  create: async (data) => {
+    const flat =await db.Flat.create(data)
+    return JSON.parse(JSON.stringify(flat))
   }
 }
 

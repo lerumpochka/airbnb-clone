@@ -1,16 +1,24 @@
 import React from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import FlatDetails from "../../../components/Flat/FlatDetails";
+// import flatsController from "../../../controllers/flatsController";
+import db from "../../../database";
 
-function FlatDetails() {
-  const router = useRouter();
-  const id = router.query.id;
+function Flat(props) {
+  console.log(props.jsonFlats);
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1 style={{ fontSize: "50px", textAlign: "center" }}>Flat {id} Details</h1>
-      <Link href="/">Back to Home page</Link>
+    <div>
+      <FlatDetails />
     </div>
   );
 }
 
-export default FlatDetails;
+export default Flat;
+
+export async function getServerSideProps(req, res) {
+  // const flats = await flatsController.findAll();
+  const flats = await db.Flat.findAll();
+  const jsonFlats = JSON.parse(JSON.stringify(flats));
+  return {
+    props: { jsonFlats },
+  };
+}

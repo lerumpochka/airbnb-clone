@@ -18,7 +18,7 @@ function ShowBookedFlats(props) {
     </div>
 
     <h3>Book this flat</h3>
-    <form action="/api/flats" method="POST">
+    <form action="/api/bookings" method="POST">
       <input hidden name="FlatId" value={flat.id}/>
       <input hidden name="UserId" value={userId} />
       
