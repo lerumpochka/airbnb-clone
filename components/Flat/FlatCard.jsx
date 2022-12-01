@@ -5,7 +5,6 @@ import StarIcon from "@mui/icons-material/Star";
 import Link from "next/link";
 
 function FlatCard(props) {
-  console.log(props.id);
 
   return (
     <div style={{ marginBottom: "30pxs" }}>
@@ -16,7 +15,7 @@ function FlatCard(props) {
           <div className={styles.img__container}>
             <Image
               className={styles.img}
-              src={props.imgScr ? props.imgScr :
+              src={props.imgSrc ? props.imgSrc :
                 "https://res.cloudinary.com/demo/image/fetch/https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"
                   }
               alt="flat img"
