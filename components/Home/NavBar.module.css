@@ -54,6 +54,7 @@
   right: 4vw;
   top: 85px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.288);
+  z-index: 1000;
 }
 .profile__card > ul {
   list-style: none;

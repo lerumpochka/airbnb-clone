@@ -1,15 +1,15 @@
-import bookingsController from "../../../controllers/bookingsController"
+import bookingsController from "../../../controllers/bookingsController";
 
 export default async function handler(req, res) {
-
   if (req.method == "POST") {
-    const data = req.body
+    const data = req.body;
     try {
-      const booking = await bookingsController.create(data)
-      res.status(200).redirect(`/profile`) //need to redirect to profile of exact user
+      // const booking = await bookingsController.create(data)
+      // res.status(200).redirect(`/profile`) //need to redirect to profile of exact user
+      console.log(data);
     } catch (error) {
       console.log(error.message);
-      res.status(400).redirect(`/flats`);
+      // res.status(400).redirect(`/flats`);
     }
   }
 }

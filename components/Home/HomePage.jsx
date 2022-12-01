@@ -13,7 +13,7 @@ const flatsContainer = {
   flexWrap: "wrap",
   gap: "3vw",
 };
-function HomePage() {
+function HomePage(props) {
   return (
     <div>
       <div className={styles.upper__nav}>

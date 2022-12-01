@@ -46,6 +46,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  z-index: -1;
 }
 .img__details__page {
   object-fit: cover;
