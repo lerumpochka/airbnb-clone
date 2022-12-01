@@ -7,7 +7,7 @@ export default function Home(props) {
       <h1>Home page</h1>
       <Map />
     </div>
-
+  )
 }
 
 

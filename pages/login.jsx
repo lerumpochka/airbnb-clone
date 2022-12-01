@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import LoginBtn from "../components/login-btn"
+
 function Login() {
   return (
     <div style={{ textAlign: "center" }}>
