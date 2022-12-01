@@ -14,6 +14,8 @@ const flatsContainer = {
   gap: "3vw",
 };
 function HomePage(props) {
+  const flats = props.flats;
+
   return (
     <div>
       <div className={styles.upper__nav}>
@@ -24,10 +26,24 @@ function HomePage(props) {
       </div>
       <NavBar homePage={true} />
       <div style={flatsContainer}>
-        <FlatCard />
-        <FlatCard />
-        <FlatCard />
-        <FlatCard />
+
+        {
+          flats.map(flat=> 
+            <FlatCard 
+            key={flat.id}
+            id={flat.id}
+            type={flat.type}
+            description={flat.description} 
+            location={flat.location}
+            userId={flat.UserId}
+            imgScr = {flat.imgScr} /> 
+            
+            
+          )
+        }
+        
+
+  
       </div>
     </div>
   );
