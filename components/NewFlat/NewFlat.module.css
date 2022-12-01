@@ -1,0 +1,103 @@
+.bg__image {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  filter: blur(8px);
+  -webkit-filter: blur(6px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 50%;
+  overflow: hidden;
+  width: 600px;
+  height: 450px;
+}
+.form__container {
+  flex: 0.5;
+  height: 100%;
+  text-align: center;
+  padding: 0px 30px;
+}
+.form__container > form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 5px;
+}
+.form__container > h1 {
+  padding-top: 15px;
+}
+
+.form__container > form > label {
+  padding-bottom: 3px;
+  padding-top: 15px;
+}
+
+.form__container > form > input:not(.submit, .upload) {
+  border: none;
+  outline: none;
+  background-color: #eee;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.542);
+  width: 100%;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.form__container > form > input:not(.submit, .upload):focus {
+  border-bottom-color: black;
+  transition: 0.3s;
+}
+.form__container > form > textarea {
+  border: none;
+  outline: none;
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.199);
+  resize: none;
+}
+
+.form__container > form > input::placeholder {
+  font-style: italic;
+  font-size: 15px;
+}
+
+.form__container > form:nth-child(9) {
+  border: none;
+}
+.form__img {
+  flex: 0.5;
+  height: 100%;
+  background-image: url("https://images.pexels.com/photos/2980955/pexels-photo-2980955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.upload {
+}
+
+.submit {
+  margin-top: 25px;
+  border: none;
+  padding: 10px 25px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.953);
+  transition: 0.3s;
+}
+.submit:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.953);
+  transition: 0.3s;
+}

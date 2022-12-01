@@ -7,7 +7,7 @@ import Link from "next/link";
 function FlatCard() {
   return (
     <div style={{ marginBottom: "30pxs" }}>
-      <Link className={styles.link} href="/flats/23">
+      <Link className={styles.link} href="/flats/12">
         <div className={styles.container}>
           <div className={styles.img__container}>
             <Image
