@@ -1,12 +1,22 @@
-import Link from "next/link";
+import NewFlatForm from "../../components/NewFlat/NewFlatForm";
+// import flatsController from "../../controllers/flatsController";
 
-function CreateFlat() {
+function CreateFlat(props) {
+  const id = 1; //will get it from session of current user
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1 style={{ fontSize: "50px", textAlign: "center" }}>The form Page to create Flat</h1>
-      <Link href="/">Back to Home page</Link>
+    <div>
+      <NewFlatForm />
     </div>
   );
 }
+
+// export async function getServerSideProps(req, res) {
+//   const userId = 1; //will get curUser from session
+//   const flats = await flatsController.findAll();
+
+//   return {
+//     props: { flats },
+//   };
+// }
 
 export default CreateFlat;

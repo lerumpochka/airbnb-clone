@@ -1,0 +1,138 @@
+.nav__container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.upper__nav {
+  padding: 20px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid rgba(165, 164, 164, 0.314);
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.lower__nav {
+  padding: 5px 5vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  align-items: center;
+  border-bottom: 1px solid rgba(165, 164, 164, 0.314);
+  position: relative;
+}
+.img {
+  object-fit: contain;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 13px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(123, 123, 123, 0.286);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.297);
+}
+
+.profile__card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 240px;
+  padding: 10px 10px;
+  position: absolute;
+  right: 4vw;
+  top: 85px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.288);
+  z-index: 1000;
+}
+.profile__card > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile__card > ul > li {
+  font-size: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.search__container {
+  width: 25vw;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.162);
+  box-shadow: 0px 2px 10px rgba(103, 103, 103, 0.179);
+}
+.search__container > input {
+  font-size: 16px;
+  padding: 1px 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.icon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.icon__container > .hostLink {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.icon__container > .hostLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: 0.3s;
+}
+.icon__container > .hostLink:hover::before {
+  width: 100%;
+  transition: 0.3s ease;
+}
+.icon__container > .hostLink > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* ----------------------------------------------------------- */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: black;
+}

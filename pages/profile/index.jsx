@@ -1,40 +1,43 @@
 import React from "react";
+import NavBar from "../../components/Home/NavBar";
+import UserProfile from "../../components/profile/UserProfile";
 import bookingsController from "../../controllers/bookingsController";
 import flatsController from "../../controllers/flatsController";
-
+import { getSession } from "next-auth/react";
 
 function Profile(props) {
-  const bookings = props.bookings
-  const flats = props.flats
+  const bookings = props.bookings;
+  const flats = props.flats;
 
+  console.log(bookings);
   return (
-    <>
-      <div>Profile</div>
-      <h3>My bookings</h3>
-      <ul>
-        {bookings.map(booking => <li key={booking.id}>visited flatId: {booking.FlatId}</li>)}
-      </ul>
-      <br />
-      <h3>My flats</h3>
-      <ul>
-        {flats.map(flat => <li key={flat.id}>I have {flat.type} in {flat.location}</li>)}
-      </ul>
-
-    </>
-  )
+    <div>
+      <NavBar />
+      <UserProfile bookings={bookings} flats={flats} />
+    </div>
+  );
 }
 
-
 export async function getServerSideProps(req, res) {
-  const visitorId = 1 //from where to get UserId??? 
-  const ownerId = 2
+  const visitorId = 1; //from where to get UserId???
+  const ownerId = 2;
   const bookings = await bookingsController.all(visitorId);
-  const flats = await flatsController.all(ownerId)
+  const flats = await flatsController.all(ownerId);
 
-  return {
-    props: { bookings, flats }
+  const session = await getSession(req);
+  console.log("session ", session);
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: `login`,
+      },
+    };
   }
 
+  return {
+    props: { bookings, flats, currentUser: session?.user || null },
+  };
 }
 
 export default Profile;

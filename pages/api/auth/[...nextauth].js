@@ -1,6 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth";
-import db from "../../../database"
+import db from "../../../database";
 
 const authOptions = {
    providers: [
@@ -29,4 +29,3 @@ const authOptions = {
   secret: 'secret', //protects our connection
 };
 export default NextAuth(authOptions);
-
