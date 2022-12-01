@@ -92,3 +92,47 @@
   outline: none;
   background-color: transparent;
 }
+
+.icon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.icon__container > .hostLink {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.icon__container > .hostLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: 0.3s;
+}
+.icon__container > .hostLink:hover::before {
+  width: 100%;
+  transition: 0.3s ease;
+}
+.icon__container > .hostLink > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* ----------------------------------------------------------- */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: black;
+}

@@ -26,24 +26,17 @@ function HomePage(props) {
       </div>
       <NavBar homePage={true} />
       <div style={flatsContainer}>
-
-        {
-          flats.map(flat=> 
-            <FlatCard 
+        {flats.map((flat) => (
+          <FlatCard
             key={flat.id}
             id={flat.id}
             type={flat.type}
-            description={flat.description} 
+            description={flat.description}
             location={flat.location}
             userId={flat.UserId}
-            imgScr = {flat.imgScr} /> 
-            
-            
-          )
-        }
-        
-
-  
+            imgScr={flat.imgScr}
+          />
+        ))}
       </div>
     </div>
   );
