@@ -9,7 +9,9 @@ function FlatCard(props) {
 
   return (
     <div style={{ marginBottom: "30pxs" }}>
+
       <Link className={styles.link} href={`/flats/${props.id}`}>
+
         <div className={styles.container}>
           <div className={styles.img__container}>
             <Image
