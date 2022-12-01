@@ -1,16 +1,15 @@
+import bookingsController from "../../../controllers/bookingsController"
+
 export default async function handler(req, res) {
+
   if (req.method == "POST") {
-    const { title, description, imageUrl } = req.body;
+    const data = req.body
     try {
-      const cocktail = await cocktailController.create({
-        title,
-        description,
-        imageUrl,
-      });
-      res.status(200).redirect(`/cocktails/${cocktail.id}`);
+      const booking = await bookingsController.create(data)
+      res.status(200).redirect(`/profile`) //need to redirect to profile of exact user
     } catch (error) {
       console.log(error.message);
-      res.status(500).redirect(`/cocktails/new?error=missing title or description`);
+      res.status(400).redirect(`/flats`);
     }
   }
 }

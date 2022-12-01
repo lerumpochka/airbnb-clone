@@ -6,9 +6,9 @@ import Booking from './models/booking.js';
 
 
 const db = {};
-db.User= User 
-db.Flat= Flat
-db.Booking= Booking
+db.User = User 
+db.Flat = Flat
+db.Booking = Booking
 let sequelize;
 if (process.env.NODE_ENV === 'production') {
   sequelize = new Sequelize(config.production);
