@@ -1,22 +1,38 @@
+import NavBar from "../../components/Home/NavBar";
 import NewFlatForm from "../../components/NewFlat/NewFlatForm";
 // import flatsController from "../../controllers/flatsController";
+import { getSession } from "next-auth/react";
+import db from "../../database";
+
 
 function CreateFlat(props) {
-  const id = 1; //will get it from session of current user
+  
   return (
     <div>
-      <NewFlatForm />
+      <NavBar />
+      <NewFlatForm user={props.user} />
     </div>
   );
 }
 
-// export async function getServerSideProps(req, res) {
-//   const userId = 1; //will get curUser from session
-//   const flats = await flatsController.findAll();
+export async function getServerSideProps(req, res) {
+  const session = await getSession(req);
 
-//   return {
-//     props: { flats },
-//   };
-// }
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: `login`,
+      },
+    };
+  }
+  const userName = session.user.name;
+  const userData = await db.User.findOne({where: {name: userName}})
+  const user = JSON.parse(JSON.stringify(userData))
+
+  return {
+    props: { user },
+  };
+}
 
 export default CreateFlat;

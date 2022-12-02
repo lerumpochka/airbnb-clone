@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./NavBar";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
@@ -16,6 +16,14 @@ const flatsContainer = {
 function HomePage(props) {
   const flats = props.flats;
 
+  const [search, setSearch] = useState("");
+
+  function handleChange(e) {
+    setSearch(e.target.value);
+  }
+
+  console.log(search);
+
   return (
     <div>
       <div className={styles.upper__nav}>
@@ -24,20 +32,22 @@ function HomePage(props) {
           Explore what&apos;s new
         </Link>
       </div>
-      <NavBar homePage={true} />
+      <NavBar homePage={true} handleChange={handleChange} />
       <div style={flatsContainer}>
-        {flats.map((flat) => (
-          <FlatCard
-            key={flat.id}
-            id={flat.id}
-            type={flat.type}
-            description={flat.description}
-            location={flat.location}
-            userId={flat.UserId}
-            imgSrc={flat.imgSrc}
-          />
-        ))}
-
+        {flats.map((flat, index) =>
+          flat.location.toLowerCase().includes(search) ||
+          flat.type.toLowerCase().includes(search) ? (
+            <FlatCard
+              key={flat.id}
+              id={flat.id}
+              type={flat.type}
+              description={flat.description}
+              location={flat.location}
+              userId={flat.UserId}
+              imgSrc={flat.imgSrc}
+            />
+          ) : null
+        )}
       </div>
     </div>
   );
