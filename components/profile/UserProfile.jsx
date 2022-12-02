@@ -2,13 +2,17 @@ import React from "react";
 import FlatCard from "../Flat/FlatCard";
 import styles from "./UserProfile.module.css";
 
-function UserProfile({ bookings, flats }) {
+function UserProfile(props) {
+  const bookings = props.bookings
+  const flats = props.flats
+  const user = props.user
+  
   return (
     <div className={styles.container}>
       <h1>Visited Flats</h1>
       <div className={styles.visited__flats}>
         {bookings.map((booking) => (
-          <FlatCard id={booking.id} imgSrc={booking.imgSrc} key={booking.id} />
+          <FlatCard key={booking.FlatId} type={booking.FlatId}  id={booking.FlatId} />
         ))}
       </div>
       <hr />
