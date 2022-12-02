@@ -3,6 +3,7 @@ import NavBar from "../Home/NavBar";
 import Image from "next/image";
 import styles from "./Flat.module.css";
 
+
 function FlatDetails(props) {
   return (
     <div className={styles.flatDetails__root}>
@@ -27,6 +28,8 @@ function FlatDetails(props) {
         <div className={styles.form__container}>
           <div>
             <form className={styles.form} action="/api/bookings" method="POST">
+              <input hidden={true} type="text" name="UserId" id="UserId" defaultValue={props.userId}/>
+              <input hidden={true} type="text" name="FlatId" id="FlatId" defaultValue={props.id} />
               <label>Start Date:</label>
               <input type="date" name="startDate" id="startDate" />
               <label>End Date:</label>

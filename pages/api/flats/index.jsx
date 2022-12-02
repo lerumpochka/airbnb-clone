@@ -7,8 +7,8 @@ export default async function handler(req, res) {
 
       const flat = await flatsController.create(data);
 
-      res.status(200).redirect(`/flats/${flat.id}`) 
-      // .redirect(`/profile`)//need to redirect to profile of current user
+      res.status(200).redirect(`/profile`)
+      // .redirect(`/flats/${flat.id}`) 
 
     } catch (error) {
       res.status(400).send("error");

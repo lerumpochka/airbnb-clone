@@ -3,9 +3,8 @@ import React from "react";
 import ImageUpload from "../ImageUpload";
 import styles from "./NewFlat.module.css";
 
-function NewFlatForm() {
-  const id = 1; //will get it from session of current user
-
+function NewFlatForm(props) {
+  const id = props.user.id
   return (
     <div>
       <div className={styles.bg__image}></div>
