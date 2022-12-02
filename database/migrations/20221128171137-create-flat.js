@@ -19,7 +19,7 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      imgScr: {
+      imgSrc: {
         type: Sequelize.STRING
       },
       UserId: {

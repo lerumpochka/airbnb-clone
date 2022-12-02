@@ -3,7 +3,7 @@ import NavBar from "../Home/NavBar";
 import Image from "next/image";
 import styles from "./Flat.module.css";
 
-function FlatDetails() {
+function FlatDetails(props) {
   return (
     <div className={styles.flatDetails__root}>
       <NavBar homePage={false} />
@@ -11,14 +11,17 @@ function FlatDetails() {
         <div className={styles.img__container}>
           <Image
             className={styles.img__details__page}
-            src="https://res.cloudinary.com/demo/image/fetch/https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"
+            src={props.imgSrc ? props.imgSrc :
+              "https://res.cloudinary.com/demo/image/fetch/https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"
+                }
             alt="Flat img"
             width="500"
             height="350"
           />
           <div>
-            <h1>Address</h1>
-            <p>Description</p>
+            <h3>{props.type} in</h3>
+            <h1>{props.location}</h1>
+            <p>{props.description}</p>
           </div>
         </div>
         <div className={styles.form__container}>

@@ -34,9 +34,11 @@ function HomePage(props) {
             description={flat.description}
             location={flat.location}
             userId={flat.UserId}
+
             imgScr={flat.imgScr}
           />
         ))}
+
       </div>
     </div>
   );

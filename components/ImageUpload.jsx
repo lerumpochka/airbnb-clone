@@ -46,7 +46,7 @@ export default function ImageUpload(props) {
         onChange={handleChange}
         required
       />
-      <input hidden={true} name="imgScr" id="imgScr" defaultValue={url} />
+      <input hidden={true} name="imgSrc" id="imgSrc" defaultValue={url} />
     </>
   );
 }
