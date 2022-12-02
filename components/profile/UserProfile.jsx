@@ -18,9 +18,9 @@ function UserProfile(props) {
       <hr />
       <h1>My hosted flats</h1>
       <div className={styles.my__hosted__flats}>
-        {flats.map((flat) => (
+        {flats.map((flat, index) => (
           <FlatCard
-            key={flat.id}
+            key={index}
             imgSrc={flat.imgSrc}
             id={flat.id}
             type={flat.type}

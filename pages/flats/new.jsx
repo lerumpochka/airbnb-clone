@@ -1,3 +1,4 @@
+import NavBar from "../../components/Home/NavBar";
 import NewFlatForm from "../../components/NewFlat/NewFlatForm";
 // import flatsController from "../../controllers/flatsController";
 import { getSession } from "next-auth/react";
@@ -8,6 +9,7 @@ function CreateFlat(props) {
   
   return (
     <div>
+      <NavBar />
       <NewFlatForm user={props.user} />
     </div>
   );

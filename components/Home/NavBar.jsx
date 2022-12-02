@@ -7,6 +7,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
 import AddIcon from "@mui/icons-material/Add";
 import { useSession, signIn, signOut } from "next-auth/react";
+import HomeIcon from "@mui/icons-material/Home";
+import Home from "@mui/icons-material/Home";
 
 function NavBar(props) {
   const [isClicked, setIsClicked] = useState(false);
@@ -27,11 +29,21 @@ function NavBar(props) {
             <i>
               <SearchIcon />
             </i>
-            <input type="text" name="search" id="search" placeholder="Search" autoComplete="off" />
+            <input
+              type="text"
+              onChange={props.handleChange}
+              name="search"
+              id="search"
+              placeholder="Search"
+              autoComplete="off"
+            />
           </div>
         )}
 
         <div className={styles.icon__container}>
+          <Link href="/" className={styles.hostLink}>
+            <HomeIcon sx={{ fontSize: 30, color: "black" }} />
+          </Link>
           <Link className={styles.hostLink} href="/flats/new">
             <AddIcon sx={{ fontSize: 30 }} />
             <span>Host your flat</span>
