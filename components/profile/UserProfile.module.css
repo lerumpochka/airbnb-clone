@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+  padding: 100px 150px;
+}
+.visited__flats,
+.my__hosted__flats {
+  padding: 40px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* .my__hosted__flats {
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+} */

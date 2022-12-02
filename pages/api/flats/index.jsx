@@ -8,8 +8,10 @@ const id = 2
 
     try {
       await flatsController.create(data);
-      res.status(200).json({data:data})
-      // .redirect(`/flats/${id}`) //need to redirect to profile of current user
+
+      res.status(200).redirect(`/profile`);
+      // redirect(`/profile`) //need to redirect to profile of current user
+
     } catch (error) {
       res.status(400).send("error");
     }

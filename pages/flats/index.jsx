@@ -4,6 +4,7 @@ import flatsController from "../../controllers/flatsController";
 
 function Flats(props) {
   const flats = props.flats;
+  console.log(flats);
   return (
     <div style={{ textAlign: "center" }}>
       <h1 style={{ fontSize: "50px", textAlign: "center" }}>All flats</h1>
