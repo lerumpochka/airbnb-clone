@@ -15,8 +15,8 @@ function FlatCard(props) {
               className={styles.img}
 
               src={
-                props.imgScr
-                  ? props.imgScr
+                props.imgSrc
+                  ? props.imgSrc
                   : "https://res.cloudinary.com/demo/image/fetch/https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"
               }
 
