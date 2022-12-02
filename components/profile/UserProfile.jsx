@@ -11,8 +11,8 @@ function UserProfile(props) {
     <div className={styles.container}>
       <h1>Visited Flats</h1>
       <div className={styles.visited__flats}>
-        {bookings.map((booking) => (
-          <FlatCard key={booking.FlatId} type={booking.FlatId}  id={booking.FlatId} />
+        {bookings.map((booking, index) => (
+          <FlatCard key={index} type={booking.FlatId}  id={booking.FlatId} />
         ))}
       </div>
       <hr />
