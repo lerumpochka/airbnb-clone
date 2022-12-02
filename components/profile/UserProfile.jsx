@@ -9,10 +9,10 @@ function UserProfile(props) {
   
   return (
     <div className={styles.container}>
-      <h1>{user.name}, see your Visited Flats of </h1>
+      <h1>{user.name}, see your Visited Flats</h1>
       <div className={styles.visited__flats}>
         {bookings.map((booking, index) => (
-          <FlatCard key={index} type={booking.FlatId}  id={booking.FlatId} />
+          <FlatCard key={index} start ={booking.startDate}  end ={booking.endDate} imgSrc={booking.Flat.imgSrc} type={booking.Flat.type} description={booking.Flat.description} location={booking.Flat.location}  id={booking.FlatId}  />
         ))}
       </div>
       <hr />
