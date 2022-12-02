@@ -4,7 +4,7 @@ import ImageUpload from "../ImageUpload";
 import styles from "./NewFlat.module.css";
 
 function NewFlatForm(props) {
-  const id = props.user.id
+  const id = props.user.id;
   return (
     <div>
       <div className={styles.bg__image}></div>
