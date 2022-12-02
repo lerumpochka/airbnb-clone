@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
-
-import mapboxgl from "!mapbox-gl"; 
+import React, { useEffect, useRef, useState } from "react";
+import mapboxgl from "!mapbox-gl";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmFkaWRhc2gxIiwiYSI6ImNsYjY5OHZ1NTBkZ2MzbnBnYTE0ano1cWQifQ.QUzrVjy2ysUN3BsZq798_w";
 
-export default function Map() {
+export default function Map({ flats }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-70.9);
@@ -20,10 +19,24 @@ export default function Map() {
       zoom: zoom,
     });
   });
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("load", () => {
+      flats.forEach((flat) => {
+        if (flat.lon && flat.lat) {
+          new mapboxgl.Marker()
+            .setLngLat([flat.lon, flat.lat])
+            .addTo(map.current);
+        }
+      });
+    });
+  });
   return (
     <div>
-        <div ref={mapContainer} className="map-container" />
+      <div className="sidebar">
+        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+      </div>
+      <div ref={mapContainer} className="map-container" />
     </div>
-  )
-
+  );
 }

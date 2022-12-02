@@ -7,10 +7,10 @@ export default function Home(props) {
   return (
     <div>
       <h1>Home page</h1>
-      <Map />
       <HomePage flats={props.flats} />
+      <Map flats={props.flats}/>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps(req, res) {

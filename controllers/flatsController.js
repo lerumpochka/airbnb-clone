@@ -24,5 +24,20 @@ const flatsController = {
     return JSON.parse(JSON.stringify(flat))
   }
 }
+const token = "mapbox access token.."
+const controller = {
+ create: async (req) => {
+   const { name, address, UserId } = req.query;
+   const user = await db.User.findOne({ where: { email: UserId } })
+   const resp = await fetch(
+  `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${token}`,
+     { method: 'GET' })
+   const obj = await resp.json()
+   const [ lon, lat ] = obj.features[0].geometry.coordinates
+   return await db.Flat.create({
+       name, address, UserId: user.id, lat, lon
+     }) // remember to add lat and lon to the Models through a migration
+ },
+}
 
 export default flatsController;
