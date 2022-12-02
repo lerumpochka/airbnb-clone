@@ -4,6 +4,7 @@ import HomePage from "../components/Home/HomePage";
 import flatsController from "../controllers/flatsController";
 
 export default function Home(props) {
+  console.log(props.flats)
   return (
     <div>
       <h1>Home page</h1>

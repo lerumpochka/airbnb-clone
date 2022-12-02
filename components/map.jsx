@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import mapboxgl from "!mapbox-gl";
+import mapboxgl from "mapbox-gl";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZmFkaWRhc2gxIiwiYSI6ImNsYjY5OHZ1NTBkZ2MzbnBnYTE0ano1cWQifQ.QUzrVjy2ysUN3BsZq798_w";
@@ -7,8 +7,8 @@ mapboxgl.accessToken =
 export default function Map({ flats }) {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
+  const [lng, setLng] = useState(0);
+  const [lat, setLat] = useState(0);
   const [zoom, setZoom] = useState(9);
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -23,9 +23,9 @@ export default function Map({ flats }) {
     if (!map.current) return; // wait for map to initialize
     map.current.on("load", () => {
       flats.forEach((flat) => {
-        if (flat.lon && flat.lat) {
+        if (flat.lng && flat.lat) {
           new mapboxgl.Marker()
-            .setLngLat([flat.lon, flat.lat])
+            .setLngLat([flat.lng, flat.lat])
             .addTo(map.current);
         }
       });
