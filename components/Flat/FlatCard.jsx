@@ -5,7 +5,6 @@ import StarIcon from "@mui/icons-material/Star";
 import Link from "next/link";
 
 function FlatCard(props) {
-
   return (
     <div style={{ marginBottom: "30pxs" }}>
       <Link className={styles.link} href={`/flats/${props.id}`}>
@@ -13,13 +12,11 @@ function FlatCard(props) {
           <div className={styles.img__container}>
             <Image
               className={styles.img}
-
               src={
                 props.imgSrc
                   ? props.imgSrc
                   : "https://res.cloudinary.com/demo/image/fetch/https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"
               }
-
               alt="flat img"
               width="300"
               height="300"
@@ -36,6 +33,11 @@ function FlatCard(props) {
           </div>
           <div className={styles.price__container}>
             <p>{props.description}</p>
+            {props.displayDate && (
+              <p>
+                {props.start.slice(0, 10)} - {props.end.slice(0, 10)}
+              </p>
+            )}
           </div>
         </div>
       </Link>
